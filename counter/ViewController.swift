@@ -230,8 +230,9 @@ class ViewController: UIViewController {
     }
     @IBAction func C(sender: AnyObject) {
         temp=0
+        temp1=0
         s=""
-        value.text=s
+        value.text=s;
     }
     @IBAction func fraction(sender: AnyObject) {
         if value.text=="0"
@@ -281,23 +282,23 @@ class ViewController: UIViewController {
     }
     @IBAction func percent(sender: AnyObject) {
         if flag==1||flag==2||flag==3||flag==4 {
-            temp=(Double)(value.text!)!/100
+            temp1=temp*(Double)(value.text!)!/100
             value.text="\(temp)"
             if flag==1{
-                temp=temp+(Double)(value.text!)!
+                temp=temp+temp1
                 value.text="\(temp)"
             }else{
                 if flag==2{
-                    temp=temp-(Double)(value.text!)!
+                    temp=temp-temp1
                     value.text="\(temp)"
                 }else{
                     if flag==3{
-                        temp=temp*(Double)(value.text!)!
+                        temp=temp*temp1
                         value.text="\(temp)"
                     }else{
                         if flag==4{
                             
-                            temp=temp/(Double)(value.text!)!
+                            temp=temp/temp1
                             value.text="\(temp)"
                             if value.text=="inf"
                             {
